@@ -1,13 +1,12 @@
 import logging
 import os
 
+from discord.ext import commands
 from pydiscogs.inspire import InspireQuote
 from pydiscogs.reddit import Reddit
-
 from pydiscogs.stocks import StockQuote
 from pydiscogs.twitch import Twitch
 from pydiscogs.wotd import WordOfTheDay
-from discord.ext import commands
 
 LOGLEVEL = os.environ.get("LOGLEVEL", "WARNING").upper()
 logging.basicConfig(level=LOGLEVEL)
