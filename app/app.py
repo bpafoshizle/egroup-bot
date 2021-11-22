@@ -25,12 +25,7 @@ async def hello(ctx):
     await ctx.send("Hello!")
 
 
-bot.add_cog(
-    WordOfTheDay(
-        bot, 
-        os.getenv("DSCRD_CHNL_GENERAL")
-    )
-)
+bot.add_cog(WordOfTheDay(bot, os.getenv("DSCRD_CHNL_GENERAL")))
 bot.add_cog(InspireQuote(bot))
 bot.add_cog(
     StockQuote(
@@ -76,7 +71,7 @@ bot.add_cog(
         reddit_client_secret=os.getenv("REDDIT_CLIENT_SECRET"),
         reddit_username=os.getenv("REDDIT_USERNAME"),
         reddit_password=os.getenv("REDDIT_PASSWORD"),
-        subreddit_list=["getmotivated","todayilearned", "interestingasfuck"],
+        subreddit_list=["getmotivated", "todayilearned", "interestingasfuck"],
         gfycat_client_id=os.getenv("GFYCAT_CLIENT_ID"),
         gfycat_client_secret=os.getenv("GFYCAT_CLIENT_SECRET"),
         discord_post_channel_id=os.getenv("DSCRD_CHNL_GENERAL"),
