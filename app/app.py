@@ -1,13 +1,12 @@
 import logging
 import os
 
-from cogs.inspire import InspireQuote
-from cogs.reddit import Reddit
-from cogs.seekingalphanews import SeekingAlhpaNews
-from cogs.stocks import StockQuote
-from cogs.twitch import Twitch
-from cogs.wotd import WordOfTheDay
 from discord.ext import commands
+from pydiscogs.inspire import InspireQuote
+from pydiscogs.reddit import Reddit
+from pydiscogs.stocks import StockQuote
+from pydiscogs.twitch import Twitch
+from pydiscogs.wotd import WordOfTheDay
 
 LOGLEVEL = os.environ.get("LOGLEVEL", "WARNING").upper()
 logging.basicConfig(level=LOGLEVEL)
@@ -25,12 +24,58 @@ async def hello(ctx):
     await ctx.send("Hello!")
 
 
-bot.add_cog(WordOfTheDay(bot))
+bot.add_cog(WordOfTheDay(bot, os.getenv("DSCRD_CHNL_GENERAL")))
 bot.add_cog(InspireQuote(bot))
-bot.add_cog(StockQuote(bot))
-bot.add_cog(SeekingAlhpaNews(bot))
-bot.add_cog(Twitch(bot))
-bot.add_cog(Reddit(bot))
+bot.add_cog(
+    StockQuote(
+        bot,
+        stock_list=[
+            "SPY",
+            "QQQ",
+            "GME",
+            "IJR",
+            "BTC-USD",
+            "ETC-USD",
+        ],
+        polygon_token=os.getenv("POLYGON_TOKEN"),
+        discord_post_channel_id=os.getenv("DSCRD_CHNL_MONEY"),
+    )
+)
+bot.add_cog(
+    Twitch(
+        bot,
+        os.getenv("TWITCH_BOT_CLIENT_ID"),
+        os.getenv("TWITCH_BOT_CLIENT_SECRET"),
+        os.getenv("DSCRD_CHNL_GAMING"),
+        join_channels_list=[
+            "bpafoshizle",
+            "ephenry84",
+            "elzblazin",
+            "kuhouseii",
+        ],
+        follow_channels_list=[
+            "JackFrags",
+            "TrueGameDataLive",
+            "Stodeh",
+            "Jukeyz",
+            "Symfuhny",
+            "NICKMERCS",
+        ],
+    )
+)
+bot.add_cog(
+    Reddit(
+        bot=bot,
+        reddit_client_id=os.getenv("REDDIT_CLIENT_ID"),
+        reddit_client_secret=os.getenv("REDDIT_CLIENT_SECRET"),
+        reddit_username=os.getenv("REDDIT_USERNAME"),
+        reddit_password=os.getenv("REDDIT_PASSWORD"),
+        subreddit_list=["getmotivated", "todayilearned", "interestingasfuck"],
+        gfycat_client_id=os.getenv("GFYCAT_CLIENT_ID"),
+        gfycat_client_secret=os.getenv("GFYCAT_CLIENT_SECRET"),
+        discord_post_channel_id=os.getenv("DSCRD_CHNL_GENERAL"),
+    )
+)
 
 logging.info("running bot: %s", bot)
 bot.run(os.getenv("DISCORD_TOKEN"))

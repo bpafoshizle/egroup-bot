@@ -1,6 +1,2 @@
 discord.py
-bs4
-pytz
-twitchio==1.2.1
-asyncpraw
-gfycat
+git+https://github.com/bpafoshizle/pydiscogs#egg=pydiscogs
