@@ -36,6 +36,11 @@ spec:
             secretKeyRef:
               name: discord
               key: token
+        - name: DISCORD_GUILD_ID
+          valueFrom:
+            secretKeyRef:
+              name: discord
+              key: dscrd-guild-id
         - name: DSCRD_CHNL_BOT_TESTING
           valueFrom:
             secretKeyRef:

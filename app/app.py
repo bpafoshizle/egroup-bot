@@ -16,14 +16,17 @@ guild_ids = [int(os.getenv("DISCORD_GUILD_ID"))]
 
 bot = commands.Bot(command_prefix=".")
 
+
 @bot.event
 async def on_ready():
     logging.info("Logged in as %s", bot.user)
+
 
 @bot.slash_command(guild_ids=guild_ids)
 async def hello(ctx, name: str = None):
     name = name or ctx.author.name
     await ctx.respond(f"Hello {name}!")
+
 
 bot.add_cog(WordOfTheDay(bot, guild_ids, os.getenv("DSCRD_CHNL_GENERAL")))
 bot.add_cog(InspireQuote(bot, guild_ids))
