@@ -10,6 +10,7 @@ kubectl create secret generic discord \
     --from-literal=dscrd-chnl-money="${DSCRD_PROD_CHNL_MONEY}" \
     --from-literal=dscrd-chnl-gaming="${DSCRD_PROD_CHNL_GAMING}" \
     --from-literal=dscrd-chnl-bot-feature-requests="${DSCRD_PROD_CHNL_BOT_FEATURE_REQUESTS}" \
+    --from-literal=dscrd-guild-id="${DISCORD_EGROUP_GUILD_ID}" \
     --dry-run=client -o yaml \
     | kubectl --kubeconfig ~/.kube/bletchley-config -n egroup-bot apply -f -
 

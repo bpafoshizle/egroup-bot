@@ -11,6 +11,9 @@ from pydiscogs.wotd import WordOfTheDay
 LOGLEVEL = os.environ.get("LOGLEVEL", "WARNING").upper()
 logging.basicConfig(level=LOGLEVEL)
 
+guild_id = os.getenv("DISCORD_GUILD_ID")
+guild_ids = [int(guild_id)] if guild_id else None
+
 bot = commands.Bot(command_prefix=".")
 
 
@@ -19,16 +22,18 @@ async def on_ready():
     logging.info("Logged in as %s", bot.user)
 
 
-@bot.command()
-async def hello(ctx):
-    await ctx.send("Hello!")
+@bot.slash_command(guild_ids=guild_ids)
+async def hello(ctx, name: str = None):
+    name = name or ctx.author.name
+    await ctx.respond(f"Hello {name}!")
 
 
-bot.add_cog(WordOfTheDay(bot, os.getenv("DSCRD_CHNL_GENERAL")))
-bot.add_cog(InspireQuote(bot))
+bot.add_cog(WordOfTheDay(bot, guild_ids, os.getenv("DSCRD_CHNL_GENERAL")))
+bot.add_cog(InspireQuote(bot, guild_ids))
 bot.add_cog(
     StockQuote(
         bot,
+        guild_ids=guild_ids,
         stock_list=[
             "SPY",
             "QQQ",
@@ -44,6 +49,7 @@ bot.add_cog(
 bot.add_cog(
     Twitch(
         bot,
+        guild_ids,
         os.getenv("TWITCH_BOT_CLIENT_ID"),
         os.getenv("TWITCH_BOT_CLIENT_SECRET"),
         os.getenv("DSCRD_CHNL_GAMING"),
@@ -66,6 +72,7 @@ bot.add_cog(
 bot.add_cog(
     Reddit(
         bot=bot,
+        guild_ids=guild_ids,
         reddit_client_id=os.getenv("REDDIT_CLIENT_ID"),
         reddit_client_secret=os.getenv("REDDIT_CLIENT_SECRET"),
         reddit_username=os.getenv("REDDIT_USERNAME"),
