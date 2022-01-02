@@ -2,7 +2,6 @@ import logging
 import os
 
 from discord.ext import commands
-
 from pydiscogs.inspire import InspireQuote
 from pydiscogs.reddit import Reddit
 from pydiscogs.stocks import StockQuote
@@ -12,7 +11,8 @@ from pydiscogs.wotd import WordOfTheDay
 LOGLEVEL = os.environ.get("LOGLEVEL", "WARNING").upper()
 logging.basicConfig(level=LOGLEVEL)
 
-guild_ids = [int(os.getenv("DISCORD_GUILD_ID"))]
+guild_id = os.getenv("DISCORD_GUILD_ID")
+guild_ids = [int(guild_id)] if guild_id else None
 
 bot = commands.Bot(command_prefix=".")
 
