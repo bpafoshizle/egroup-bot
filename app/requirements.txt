@@ -1,2 +1,2 @@
-discord.py
+git+https://github.com/Pycord-Development/pycord#egg=py_cord
 git+https://github.com/bpafoshizle/pydiscogs#egg=pydiscogs
