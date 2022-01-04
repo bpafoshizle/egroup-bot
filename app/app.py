@@ -58,7 +58,7 @@ bot.add_cog(
             "ephenry84",
             "elzblazin",
             "kuhouseii",
-        ]
+        ],
     )
 )
 bot.add_cog(
