@@ -59,14 +59,6 @@ bot.add_cog(
             "elzblazin",
             "kuhouseii",
         ],
-        follow_channels_list=[
-            "JackFrags",
-            "TrueGameDataLive",
-            "Stodeh",
-            "Jukeyz",
-            "Symfuhny",
-            "NICKMERCS",
-        ],
     )
 )
 bot.add_cog(
