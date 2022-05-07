@@ -1,5 +1,5 @@
 FROM python:3.9.1-alpine3.12 AS compile-image
-RUN apk --no-cache add gcc=9.3.0-r2 musl-dev=1.1.24-r10 git=2.26.3-r0
+RUN apk --no-cache add gcc=9.3.0-r2 musl-dev=1.1.24-r10 git~=2.26.3
 
 # Set up virtual environment and path (activate)
 ENV VIRTUAL_ENV=/opt/venv
