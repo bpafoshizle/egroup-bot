@@ -1,2 +1,2 @@
-git+https://github.com/Pycord-Development/pycord@master#egg=py_cord
+py-cord==2.3.2
 git+https://github.com/bpafoshizle/pydiscogs@main#egg=pydiscogs
