@@ -32,3 +32,5 @@ jobs:
     uses: bpafoshizle/actions/.github/workflows/docker-build-push-ghcr.yml@main
     with:
       platform: 'linux/amd64,linux/arm64'
+    secrets:
+      PACKAGE_TOKEN: ${{ secrets.PACKAGE_TOKEN }}
