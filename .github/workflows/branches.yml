@@ -5,6 +5,9 @@ on:
   push:
     branches-ignore:
       - main
+  
+  workflow_dispatch:
+
 jobs:
   show-key-values:
     name: show values of variables
