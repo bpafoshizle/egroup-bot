@@ -12,13 +12,11 @@ cogs:
   - name: stocks
     properties: 
       stockList:
-        - SPY
-        - QQQ
+        - TSN
         - GME
-        - IJR
+        - TSLA
         - BTC-USD
-        - ETC-USD
-      polygonToken: !ENV ${POLYGON_TOKEN}
+      polygonAPIKey: !ENV ${POLYGON_API_KEY}
       postChannelId: !ENV ${DSCRD_CHNL_MONEY}
   - name: twitch
     properties:
