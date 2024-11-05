@@ -2,7 +2,7 @@ def main():
     import logging
     import os
 
-    # Set the logging level based on the environment variable
+    # Set the logging level based on the environment variable.
     log_level = os.environ.get("LOG_LEVEL", "INFO")
     log_level = log_level.upper()
 
