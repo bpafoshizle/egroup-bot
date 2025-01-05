@@ -41,3 +41,8 @@ cogs:
       gfycatClientId: !ENV ${GFYCAT_CLIENT_ID}
       gfycatClientSecret: !ENV ${GFYCAT_CLIENT_SECRET}
       postChannelId: !ENV ${DSCRD_CHNL_GENERAL}
+  - name: ai
+    properties: 
+      ollamaEndpoint:  !ENV ${OLLAMA_ENDPOINT}
+      groqAPIKey:  !ENV ${GROQ_API_KEY:}
+      systemPrompt: !ENV ${AI_SYSTEM_PROMPT}

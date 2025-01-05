@@ -3,7 +3,7 @@ def main():
     import os
 
     # Set the logging level based on the environment variable.
-    log_level = os.environ.get("LOG_LEVEL", "INFO")
+    log_level = os.environ.get("LOGLEVEL", "INFO")
     log_level = log_level.upper()
 
     if log_level not in ["DEBUG", "INFO", "WARNING", "ERROR", "CRITICAL"]:
