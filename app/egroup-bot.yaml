@@ -45,4 +45,5 @@ cogs:
     properties: 
       ollamaEndpoint:  !ENV ${OLLAMA_ENDPOINT}
       groqAPIKey:  !ENV ${GROQ_API_KEY:}
+      groqLLMModel: !ENV ${GROQ_LLM_MODEL}
       systemPrompt: !ENV ${AI_SYSTEM_PROMPT}
