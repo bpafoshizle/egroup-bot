@@ -1,6 +1,5 @@
-# Apply edit to previous code
 FROM python:3.13-alpine AS compile-image
-RUN apk --no-cache add gcc=9.3.0-r2 musl-dev=1.1.24-r10 git~=2.26.3
+RUN apk --no-cache add gcc musl-dev git
 
 # Set up virtual environment and path (activate)
 ENV VIRTUAL_ENV=/opt/venv
