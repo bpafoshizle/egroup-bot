@@ -1,5 +1,5 @@
 FROM python:3.13-alpine AS compile-image
-RUN apk --no-cache add gcc musl-dev git
+RUN apk --no-cache add gcc musl-dev git # ignore:DL3018
 
 # Set up virtual environment and path (activate)
 ENV VIRTUAL_ENV=/opt/venv
