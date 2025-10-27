@@ -1,3 +1,19 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "app"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "py-cord==2.6.1",
+    "python-dotenv==1.0.1",
+    "pydiscogs @ git+https://github.com/bpafoshizle/pydiscogs@main",
+]
+
 [tool.isort]
 multi_line_output = 3
 include_trailing_comma = true
@@ -14,3 +30,8 @@ max-line-length = "88"
 
 [tool.black]
 line-length = 88
+
+[tool.flake8]
+max-line-length = 88
+
+
