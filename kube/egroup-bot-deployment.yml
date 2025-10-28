@@ -131,5 +131,60 @@ spec:
             secretKeyRef:
               name: gfycat
               key: gfycat-client-secret
+        - name: OLLAMA_ENDPOINT
+          valueFrom:
+            secretKeyRef:
+              name: ollama
+              key: ollama-endpoint
+        - name: OLLAMA_LLM_MODEL
+          valueFrom:
+            secretKeyRef:
+              name: ollama
+              key: ollama-llm-model
+        - name: GEMINI_API_KEY
+          valueFrom:
+            secretKeyRef:
+              name: google
+              key: gemini-api-key
+        - name: GOOGLE_API_KEY
+          valueFrom:
+            secretKeyRef:
+              name: google
+              key: google-api-key
+        - name: GOOGLE_LLM_MODEL
+          valueFrom:
+            secretKeyRef:
+              name: google
+              key: google-llm-model
+        - name: GROQ_API_KEY
+          valueFrom:
+            secretKeyRef:
+              name: groq
+              key: groq-api-key
+        - name: GROQ_LLM_MODEL
+          valueFrom:
+            secretKeyRef:
+              name: groq
+              key: groq-llm-model
+        - name: BRAVE_SEARCH_API_KEY
+          valueFrom:
+            secretKeyRef:
+              name: brave
+              key: brave-search-api-key
+        - name: STEAM_KEY
+          valueFrom:
+            secretKeyRef:
+              name: steam
+              key: steam-key
+        - name: STEAM_ID
+          valueFrom:
+            secretKeyRef:
+              name: steam
+              key: steam-id
+        - name: AI_SYSTEM_PROMPT
+          valueFrom:
+            secretKeyRef:
+              name: ai
+              key: ai-system-prompt
       imagePullSecrets:
       - name: ghcr-egroup-bot
