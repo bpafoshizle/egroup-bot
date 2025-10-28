@@ -147,3 +147,6 @@ sensitive/
 .continue/
 
 libs/
+
+# Local git editing environment
+pydiscogs/
