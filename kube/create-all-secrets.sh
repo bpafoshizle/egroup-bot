@@ -3,7 +3,9 @@
 # Read all non-commented lines from the .env file in the parent directory,
 # then export them as environment variables for this script and its children.
 set -o allexport
-source ../.env
+if [ -f ../.env ]; then
+  source ../.env
+fi
 set +o allexport
 
 ./create-discord-token-secret.sh
