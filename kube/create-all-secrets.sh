@@ -4,6 +4,7 @@
 # then export them as environment variables for this script and its children.
 set -o allexport
 if [ -f ../.env ]; then
+  # shellcheck disable=SC1091
   source ../.env
 fi
 set +o allexport
