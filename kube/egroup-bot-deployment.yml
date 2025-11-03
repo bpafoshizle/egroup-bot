@@ -86,6 +86,11 @@ spec:
             secretKeyRef:
               name: twitch
               key: twitch-bot-username
+        - name: TWITCH_BOT_USER_ID
+          valueFrom:
+            secretKeyRef:
+              name: twitch
+              key: twitch-bot-user-id
         - name: TWITCH_BOT_CLIENT_ID
           valueFrom:
             secretKeyRef:
