@@ -4,6 +4,8 @@ def main():
 
     from dotenv import load_dotenv
 
+    load_dotenv(override=True)
+
     # Set the logging level based on the environment variable.
     log_level = os.environ.get("LOGLEVEL", "INFO")
     log_level = log_level.upper()
@@ -19,7 +21,7 @@ def main():
         datefmt="%Y-%m-%d %H:%M:%S",
     )
 
-    load_dotenv(override=True)
+    logging.info(f"Current LOGLEVEL: {log_level}")
 
     from pydiscogs import botbuilder
 
