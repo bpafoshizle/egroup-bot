@@ -7,7 +7,7 @@ name = "app"
 version = "0.2.1"
 description = "Add your description here"
 readme = "README.md"
-requires-python = ">=3.13"
+requires-python = "==3.13.1"
 dependencies = [
     "py-cord==2.6.1",
     "python-dotenv==1.2.1",
@@ -19,8 +19,8 @@ dependencies = [
 # When you are actively editing the library, uncomment the line below.
 # It tells uv to pull **pydiscogs** from the local checkout instead of the
 # remote Git repo, and the `editable = true` flag keeps it in “‑e” mode.
-[tool.uv.sources]
-pydiscogs = { path = "../libs/pydiscogs", editable = true }
+#[tool.uv.sources]
+#pydiscogs = { path = "../libs/pydiscogs", editable = true }
 
 [tool.isort]
 multi_line_output = 3
