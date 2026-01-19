@@ -5,43 +5,6 @@ commandPrefix: "."
 logLevel: !ENV ${LOGLEVEL}
 
 cogs:
-  - name: inspire
-  - name: wotd
-    properties:
-      postChannelId: !ENV ${DSCRD_CHNL_GENERAL}
-  - name: stocks
-    properties: 
-      stockList:
-        - TSN
-        - GME
-        - TSLA
-        - BTC-USD
-      polygonAPIKey: !ENV ${POLYGON_API_KEY}
-      postChannelId: !ENV ${DSCRD_CHNL_MONEY}
-  - name: twitch
-    properties:
-      twitchClientID: !ENV ${TWITCH_BOT_CLIENT_ID}
-      twitchClientSecret: !ENV ${TWITCH_BOT_CLIENT_SECRET}
-      twitchBotUserID: !ENV ${TWITCH_BOT_USER_ID}
-      joinChannelList:
-        - bpafoshizle
-        - ephenry84
-        - elzblazin
-        - kuhouseii
-      postChannelId: !ENV ${DSCRD_CHNL_GAMING}
-  - name: reddit
-    properties: 
-      redditClient: !ENV ${REDDIT_CLIENT_ID}
-      redditSecret: !ENV ${REDDIT_CLIENT_SECRET}
-      redditUsername: !ENV ${REDDIT_USERNAME}
-      redditPassword: !ENV ${REDDIT_PASSWORD}
-      subRedditList: 
-        - getmotivated
-        - todayilearned
-        - interestingasfuck
-      gfycatClientId: !ENV ${GFYCAT_CLIENT_ID}
-      gfycatClientSecret: !ENV ${GFYCAT_CLIENT_SECRET}
-      postChannelId: !ENV ${DSCRD_CHNL_GENERAL}
   - name: ai
     properties: 
       ollamaEndpoint:  !ENV ${OLLAMA_ENDPOINT}
@@ -52,3 +15,4 @@ cogs:
       groqLLMModel: !ENV ${GROQ_LLM_MODEL}
       xaiAPIKey: !ENV ${XAI_API_KEY}
       systemPrompt: !ENV ${AI_SYSTEM_PROMPT}
+      postgresDbUrl: !ENV ${POSTGRES_DB_URL}
