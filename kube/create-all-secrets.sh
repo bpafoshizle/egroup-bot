@@ -22,3 +22,4 @@ set +o allexport
 ./create-brave-secret.sh
 ./create-steam-secret.sh
 ./create-ai-secret.sh
+./create-postgres-secret.sh
