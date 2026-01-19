@@ -196,5 +196,10 @@ spec:
             secretKeyRef:
               name: ai
               key: ai-system-prompt
+        - name: POSTGRES_DB_URL
+          valueFrom:
+            secretKeyRef:
+              name: ai
+              key: postgres-db-prod-url
       imagePullSecrets:
       - name: ghcr-egroup-bot

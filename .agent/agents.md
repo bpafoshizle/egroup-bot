@@ -17,7 +17,7 @@ The bot uses an agentic architecture built on **LangGraph**. The primary unit of
 
 ### Local Testing with Editable Libs
 To test changes in `libs/pydiscogs` directly from the `app` runner:
-1. Uncomment the following in `app/pyproject.toml`:
+1. Uncomment the following in `app/pyproject.toml` (it is commented out by default for production):
    ```toml
    [tool.uv.sources]
    pydiscogs = { path = "../libs/pydiscogs", editable = true }
@@ -26,5 +26,5 @@ To test changes in `libs/pydiscogs` directly from the `app` runner:
 
 ### Postgres Memory
 The bot requires a Postgres database for conversation memory.
-- **Env Var**: `POSTGRES_DB_URL`
+- **Env Var**: `POSTGRES_DB_URL` (mapped from `POSTGRES_DB_PROD_URL` secret in production)
 - **Tables**: `checkpoints` and `checkpoint_blobs` are automatically created on first use.
