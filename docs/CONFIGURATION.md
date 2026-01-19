@@ -57,8 +57,8 @@ config_value = os.getenv("NEW_CONFIG_NAME")
 
 For local development where you might not be running Kubernetes:
 
-1.  Ensure you have the environment variable set in your `.env` file or shell environment.
-2.  If using `app/pyproject.toml` overrides for local library development, ensure `pydiscogs` is pointed to your local checkout.
+1. Ensure you have the environment variable set in your `.env` file or shell environment.
+2. If using `app/pyproject.toml` overrides for local library development, ensure `pydiscogs` is pointed to your local checkout.
 
 ```toml
 # app/pyproject.toml
