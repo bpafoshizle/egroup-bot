@@ -2,8 +2,8 @@ def main():
     import logging
     import os
 
-    from dotenv import load_dotenv, find_dotenv
-    
+    from dotenv import find_dotenv, load_dotenv
+
     # Locate .env file specifically to ensure it loads from parent if needed
     dotenv_path = find_dotenv()
     if dotenv_path:
@@ -15,7 +15,8 @@ def main():
 
     if log_level not in ["DEBUG", "INFO", "WARNING", "ERROR", "CRITICAL"]:
         raise ValueError(
-            "Invalid log level. Must be one of: DEBUG, INFO, WARNING, ERROR, CRITICAL"
+            "Invalid log level. Must be one of: "
+            "DEBUG, INFO, WARNING, ERROR, CRITICAL"
         )
 
     logging.basicConfig(
@@ -23,10 +24,10 @@ def main():
         level=getattr(logging, log_level),
         datefmt="%Y-%m-%d %H:%M:%S",
     )
-    
+
     # Silence discord library noise to focus on pydiscogs
     logging.getLogger("discord").setLevel(logging.WARNING)
-    
+
     # NOW we can safely log things
     if dotenv_path:
         logging.info(f"Loading .env from: {dotenv_path}")

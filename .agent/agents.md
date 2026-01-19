@@ -10,8 +10,8 @@ The bot uses an agentic architecture built on **LangGraph**. The primary unit of
 - **Base LLM**: Supports Google Gemini, Groq, and Ollama (configurable via `egroup-bot.yaml`).
 - **Persistence**: Postgres-backed checkpoints via `AsyncPostgresSaver`.
 - **Memory**:
-    - **Short-term**: Per-channel/thread conversation persistence.
-    - **Long-term**: Planned summarization and cross-thread fact storage using LangGraph's `Store`.
+  - **Short-term**: Per-channel/thread conversation persistence.
+  - **Long-term**: Planned summarization and cross-thread fact storage using LangGraph's `Store`.
 
 ## Development Workflows
 
