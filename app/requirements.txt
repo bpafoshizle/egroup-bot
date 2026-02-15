@@ -495,7 +495,7 @@ pydantic-core==2.41.4
     # via pydantic
 pydantic-settings==2.12.0
     # via mcp
-pydiscogs @ git+https://github.com/bpafoshizle/pydiscogs@690351bdaf7f411eece81a0299ba32ec6b5e12a6
+pydiscogs @ git+https://github.com/bpafoshizle/pydiscogs@b2954ae4cc7656bc4dc112031e07245d559e6972
     # via app (app/pyproject.toml)
 pyjwt==2.10.1
     # via mcp
